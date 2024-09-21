@@ -1,0 +1,74 @@
+51. Find all users who live in "Mumbai" and have the skill "Kotlin".
+Ans db.users.find({ city: "Mumbai", skills: "Kotlin" }) 
+
+52. Find users whose last name ends with "Mishra".
+Ans db.users.find({ lastName: /Mishra$/ }) 
+
+53. Find users whose password contains "123" and live in "Goa".
+Ans db.users.find({ password: /123/, city: "Goa" }) 
+
+54. Find all users with the skill "Spring" and live in "Jaipur".
+Ans db.users.find({ skills: "Spring", city: "Jaipur" }) 
+
+55. Find users whose city is "Hyderabad" and salary is more than 1000000.
+Ans db.users.find({ city: "Hyderabad", salary: { $gt: 1000000 } }) 
+
+56. Find users who have the skill "DBMS" and salary greater than 800000.
+Ans db.users.find({ skills: "DBMS", salary: { $gt: 800000 } }) 
+
+57. Find all users whose role is "admin" and city is "Goa".
+Ans db.users.find({ role: "admin", city: "Goa" }) 
+
+58. Find users whose skills include "C#" and salary less than 1500000.
+Ans db.users.find({ skills: "C#", salary: { $lt: 1500000 } }) 
+
+59. Find users who live in "Assam" and have the skill "Java".
+Ans db.users.find({ city: "Assam", skills: "Java" }) 
+
+60. Find all users who have more than 3 skills.
+Ans db.users.find({ $expr: { $gt: [{ $size: "$skills" }, 3] } }) 
+
+61. Find users who live in "Jaipur" and have the skill "Node.js".
+Ans db.users.find({ city: "Jaipur", skills: "Node.js" }) 
+
+62. Find users whose city is "Kolkata" and have the skill "Python".
+Ans db.users.find({ city: "Kolkata", skills: "Python" }) 
+
+63. Find all users with a salary greater than 600000 and role "customer".
+Ans db.users.find({ salary: { $gt: 600000 }, role: "customer" }) 
+
+64. Find users who live in "Goa" and do not have the skill "Java".
+Ans db.users.find({ city: "Goa", skills: { $ne: "Java" } }) 
+
+65. Find all users who have the skill "Django" and salary greater than 1500000.
+Ans db.users.find({ skills: "Django", salary: { $gt: 1500000 } }) 
+
+66. Find users whose email ends with "regexsoftware.com" and have "Java" as a skill.
+Ans db.users.find({ useremail: /regexsoftware\.com$/, skills: "Java" }) 
+
+67. Find all users whose password starts with "A" and live in "Kolkata".
+Ans db.users.find({ password: /^A/, city: "Kolkata" }) 
+
+68. Find users whose salary is between 1000000 and 1500000 and live in "Assam".
+Ans db.users.find({ salary: { $gte: 1000000, $lte: 1500000 }, city: "Assam" }) 
+
+69. Find all users who have "Flask" as a skill.
+Ans db.users.find({ skills: "Flask" }) 
+
+70. Find users whose last name is "Verma" and salary is greater than 1000000.
+Ans db.users.find({ lastName: "Verma", salary: { $gt: 1000000 } }) 
+
+71. Find users who live in "New Delhi" and have the skill "React".
+Ans db.users.find({ city: "New Delhi", skills: "React" }) 
+
+72. Find all users whose role is "customer" and salary is greater than 1200000.
+Ans db.users.find({ role: "customer", salary: { $gt: 1200000 } }) 
+
+73. Find users who live in "Goa" and have more than two skills.
+Ans db.users.find({ city: "Goa", $expr: { $gt: [{ $size: "$skills" }, 2] } }) 
+
+74. Find users whose city is "Assam" and salary is less than 700000.
+Ans db.users.find({ city: "Assam", salary: { $lt: 700000 } }) 
+
+75. Find all users whose skill set includes "C++" but not "Python".
+Ans db.users.find({ skills: { $all: ["C++"], $nin: ["Python"] } }) 

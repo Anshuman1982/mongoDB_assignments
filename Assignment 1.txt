@@ -1,0 +1,75 @@
+1. Find a user with the username "Prajjal Dhar".
+Ans db.users.find({ username: "Prajjal Dhar" }) 
+
+2. Find all users with the role "admin".
+Ans db.users.find({ role: "admin" }) 
+
+3. Find users whose age is greater than 30.
+Ans db.users.find({ age: { $gt: 30 } }) 
+
+4. Find users whose salary is less than 600000.
+Ans db.users.find({ salary: { $lt: 600000 } }) 
+
+5. Find all users who live in "Goa".
+Ans db.users.find({ city: "Goa" }) 
+
+6. Find users who have the skill "Python".
+Ans db.users.find({ skills: "Python" }) 
+
+7. Find users whose gender is "Female".
+Ans db.users.find({ gender: "Female" }) 
+
+8. Find a user with the email "prajjal.dhar@gmail.com".
+Ans db.users.find({ useremail: "prajjal.dhar@gmail.com" }) 
+
+9. Find users who have both "Java" and "C++" skills.
+Ans db.users.find({ skills: { $all: ["Java", "C++"] } }) 
+
+10. Find users whose salary is between 500000 and 1000000.
+Ans db.users.find({ salary: { $gte: 500000, $lte: 1000000 } }) 
+
+11. Find users who have "Java" as a skill but not "Python".
+Ans db.users.find({ skills: "Java", skills: { $nin: ["Python"] } }) 
+
+12. Find all users with the city "Mumbai" and role "customer".
+Ans db.users.find({ city: "Mumbai", role: "customer" }) 
+
+13. Find users who have a salary greater than or equal to 900000.
+Ans db.users.find({ salary: { $gte: 900000 } }) 
+
+14. Find a user whose first name is "Sumanth" and last name is "Rao".
+Ans db.users.find({ firstName: "Sumanth", lastName: "Rao" }) 
+
+15. Find users who live in either "Goa" or "New Delhi".
+Ans db.userdata.find({ city: { $in: ["Goa", "New Delhi"] } })
+
+16. Find users whose email domain is "regexsoftware.com".
+Ans db.users.find({ useremail: /@regexsoftware\.com$/ }) 
+
+17. Find all users whose salary is not equal to 500000.
+Ans db.users.find({ salary: { $ne: 500000 } }) 
+
+18. Find users who have "Python" and "C++" skills but not "DBMS".
+Ans db.users.find({ skills: { $all: ["Python", "C++"] }, skills: { $nin: ["DBMS"] } }) 
+
+19. Find all users whose gender is "Male" and live in "Assam".
+Ans db.users.find({ gender: "Male", city: "Assam" }) 
+
+20. Find users whose password contains "123".
+Ans db.users.find({ password: /123/ }) 
+
+21. Find users whose last name is "Patel" and city is not "Kolkata".
+Ans db.users.find({ lastName: "Patel", city: { $ne: "Kolkata" } }) 
+
+22. Find all users who have more than two skills.
+Ans db.users.find({ skills: { $size: { $gt: 2 } } }) 
+
+23. Find users whose city is "Jaipur" and salary is less than 500000.
+Ans db.users.find({ city: "Jaipur", salary: { $lt: 500000 } }) 
+
+24. Find users whose age is not equal to 28.
+Ans db.users.find({ age: { $ne: 28 } }) 
+
+25. Find all users with the role "customer" and skill "React".
+Ans db.users.find({ role: "customer", skills: "React" }) 
+
